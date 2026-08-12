@@ -1,0 +1,465 @@
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+   ===================================================== */
+
+:root {
+    --cor-fundo: #f5f7fa;
+    --cor-superficie: #ffffff;
+    --cor-texto: #202124;
+    --cor-texto-secundario: #4a4f55;
+    --cor-primaria: #174ea6;
+    --cor-primaria-hover: #0d3b7a;
+    --cor-borda: #c7ccd1;
+    --cor-destaque: #e8f0fe;
+
+    --tamanho-base: 18px;
+    --altura-linha: 1.8;
+    --raio: 12px;
+
+    --sombra:
+        0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: var(--tamanho-base);
+    line-height: var(--altura-linha);
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE
+   ===================================================== */
+
+.skip-link {
+    position: absolute;
+
+    top: -100px;
+    left: 20px;
+
+    z-index: 9999;
+
+    padding: 12px 18px;
+
+    background: #000;
+    color: #fff;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 6px;
+}
+
+.skip-link:focus {
+    top: 20px;
+}
+
+
+/* Classe utilizada apenas por leitores de tela */
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.container {
+    width: min(100% - 32px, 900px);
+    margin-inline: auto;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+   ===================================================== */
+
+.cabecalho {
+    padding: 70px 0 60px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123d79,
+            #174ea6
+        );
+
+    color: white;
+}
+
+.categoria {
+    margin: 0 0 12px;
+
+    font-size: 0.95rem;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+h1 {
+    max-width: 800px;
+
+    margin: 0;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    line-height: 1.15;
+}
+
+.subtitulo {
+    max-width: 750px;
+
+    margin: 24px 0 0;
+
+    font-size: 1.2rem;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   PAINEL DE ACESSIBILIDADE
+   ===================================================== */
+
+.acessibilidade {
+    background: var(--cor-superficie);
+
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.acessibilidade .container {
+    padding: 24px 0;
+}
+
+.acessibilidade h2 {
+    margin-top: 0;
+
+    font-size: 1.15rem;
+}
+
+.controles {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+button {
+    min-height: 48px;
+
+    padding: 10px 16px;
+
+    border: 2px solid var(--cor-primaria);
+
+    border-radius: 8px;
+
+    background: var(--cor-superficie);
+
+    color: var(--cor-primaria);
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--cor-primaria);
+
+    color: white;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 4px solid #ffbf00;
+
+    outline-offset: 4px;
+}
+
+
+/* =====================================================
+   ARTIGO
+   ===================================================== */
+
+.artigo {
+    padding: 60px 0;
+}
+
+.artigo .container {
+    padding: 50px;
+
+    background: var(--cor-superficie);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+}
+
+.artigo p {
+    margin: 0 0 24px;
+
+    color: var(--cor-texto);
+
+    font-size: 1em;
+
+    line-height: var(--altura-linha);
+}
+
+.artigo h2 {
+    margin-top: 45px;
+    margin-bottom: 18px;
+
+    color: var(--cor-primaria);
+
+    font-size: 1.8rem;
+
+    line-height: 1.3;
+}
+
+.introducao {
+    font-size: 1.2em !important;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   BLOCO DE DESTAQUE
+   ===================================================== */
+
+.destaque {
+    margin: 35px 0;
+
+    padding: 25px;
+
+    background: var(--cor-destaque);
+
+    border-left: 6px solid var(--cor-primaria);
+
+    border-radius: 6px;
+}
+
+.destaque strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--cor-primaria);
+
+    font-size: 1.15em;
+}
+
+.destaque p {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   CONCLUSÃO
+   ===================================================== */
+
+.conclusao {
+    margin-top: 50px;
+
+    padding: 30px;
+
+    background: #f0f4f8;
+
+    border-radius: var(--raio);
+
+    border: 2px solid var(--cor-borda);
+}
+
+.conclusao h2 {
+    margin-top: 0;
+}
+
+
+/* =====================================================
+   RODAPÉ
+   ===================================================== */
+
+.rodape {
+    padding: 40px 0;
+
+    background: #17202a;
+
+    color: white;
+
+    text-align: center;
+}
+
+.rodape p {
+    margin: 8px 0;
+}
+
+.rodape a {
+    color: #ffffff;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   ALTO CONTRASTE
+   ===================================================== */
+
+body.alto-contraste {
+    --cor-fundo: #000000;
+    --cor-superficie: #000000;
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #ffffff;
+    --cor-primaria: #ffff00;
+    --cor-primaria-hover: #ffffff;
+    --cor-borda: #ffffff;
+    --cor-destaque: #000000;
+}
+
+body.alto-contraste .cabecalho {
+    background: #000000;
+
+    border-bottom: 3px solid #ffffff;
+}
+
+body.alto-contraste .subtitulo,
+body.alto-contraste .categoria {
+    color: #ffffff;
+}
+
+body.alto-contraste .artigo .container,
+body.alto-contraste .conclusao {
+    background: #000000;
+
+    border: 2px solid #ffffff;
+}
+
+body.alto-contraste .destaque {
+    background: #000000;
+
+    border: 3px solid #ffff00;
+}
+
+body.alto-contraste button {
+    background: #000000;
+
+    color: #ffff00;
+
+    border-color: #ffff00;
+}
+
+body.alto-contraste button:hover {
+    background: #ffff00;
+
+    color: #000000;
+}
+
+body.alto-contraste .acessibilidade {
+    background: #000000;
+
+    border-color: #ffffff;
+}
+
+body.alto-contraste .rodape {
+    background: #000000;
+
+    border-top: 2px solid #ffffff;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .cabecalho {
+        padding: 45px 0;
+    }
+
+    .artigo {
+        padding: 30px 0;
+    }
+
+    .artigo .container {
+        padding: 28px 22px;
+
+        border-radius: 0;
+    }
+
+    .controles {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+}
+
+
+/* =====================================================
+   REDUÇÃO DE MOVIMENTO
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
